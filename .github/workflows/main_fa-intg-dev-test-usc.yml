@@ -30,9 +30,15 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
+          
+      - name: Install PyBuilder
+        run: pip install pybuilder
+
+      - name: Build Repository
+        run: pyb
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pyb install_dependencies
 
       # Optional: Add step to run tests here
 
